@@ -6,5 +6,7 @@ export default {
   component: Spinner,
   title: 'Components/Spinner',
 } as ComponentMeta<typeof Spinner>;
+
 const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;
+
 export const Default = Template.bind({});
