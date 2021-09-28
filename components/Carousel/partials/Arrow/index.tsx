@@ -1,5 +1,6 @@
 import React from 'react';
 import BackIcon from '../../../../assets/slider-back-icon';
+//import { ReactComponent as BackIcon } from '../../../../assets/slider-back-icon.svg';
 import { bemHelper } from '../../../../helpers';
 import './styles.scss';
 

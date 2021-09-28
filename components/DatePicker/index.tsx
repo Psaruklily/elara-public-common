@@ -1,7 +1,8 @@
 import React from 'react';
 import Flatpickr from 'react-flatpickr';
 import { Input } from '../../components';
-import { ReactComponent as CalendarIcon } from '../../assets/calendar-icon.svg';
+//import { ReactComponent as CalendarIcon } from '../../assets/calendar-icon.svg';
+import CalendarIcon from '../../assets/calendar-icon';
 
 export default function DatePicker(props: IProps) {
   const {
