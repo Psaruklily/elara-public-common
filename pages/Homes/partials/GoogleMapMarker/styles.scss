@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+.HomesGoogleMapMarker {
+  font: $font-weight-bold $font-size-s 'Mulish', sans-serif;
+  background-color: $teal;
+  border: $border-width-base solid $white;
+  border-radius: $border-radius-big;
+  color: $white;
+  padding: 2px 5px;
+  width: fit-content;
+  cursor: pointer;
+
+  &--selected {
+    background-color: $orange;
+  }
+}

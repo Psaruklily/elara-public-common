@@ -1,0 +1,61 @@
+@import './variables';
+
+@mixin page-container($top-offset: 0, $full-screen-height: false, $vertical-align-center: false) {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100vw;
+  margin-top: $top-offset;
+  box-sizing: border-box;
+  overflow: auto;
+
+  @if $full-screen-height {
+    overflow: hidden;
+  }
+
+  @if $vertical-align-center {
+    align-items: center;
+  }
+}
+
+@mixin page-content($content-width: $page__content__width, $content-max-width: $page__content__max-width, $content-padding: 0) {
+  height: 100%;
+  width: $content-width;
+  max-width: $content-max-width;
+  padding: $content-padding;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@mixin font($size: $font-size-m, $weight: $font-weight-regular, $color: $black) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin amount {
+  > span:first-of-type {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+  }
+
+  > span:last-of-type {
+    margin-left: 4px;
+    font-size: $font-size-s;
+    font-weight: $font-weight-regular;
+    color: rgba($black, 0.6);
+  }
+}
+
+@mixin blurred-background($no-blur: false) {
+  /* slightly transparent fallback */
+  background-color: rgba($black, .25);
+
+  @if not $no-blur {
+    /* if backdrop support: very transparent and blurred */
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      background-color: transparent;
+      backdrop-filter: blur(1px);
+    }
+  }
+}

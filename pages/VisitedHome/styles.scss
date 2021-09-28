@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+.VisitedHomePage {
+  @include page-container($page__top-offset);
+
+  &__content {
+    @include page-content;
+
+    > h1 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 0 20px 0;
+    }
+
+    > p {
+      font-size: $font-size-s;
+      font-weight: $font-weight-medium;
+      margin: 0;
+
+      &:last-of-type {
+        margin: 0 0 24px 0;
+      }
+
+      > span {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    > .Property {
+      border: $border-width-base solid $gray-silver;
+    }
+
+    &__buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-row-gap: 16px;
+      grid-template-rows: repeat(3, min-content);
+      justify-items: end;
+
+      .Button:not(:last-of-type) {
+        width: 200px;
+      }
+    }
+  }
+
+  &__smile {
+    color: $dark-turquoise;
+  }
+}

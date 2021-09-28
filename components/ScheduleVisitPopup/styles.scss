@@ -1,0 +1,124 @@
+@import '~flatpickr/dist/flatpickr.min.css';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+$popup-width: 600px;
+$popup-height: 877px;
+$popup-height--success: 414px;
+$popup-height--error: 319px;
+$content-padding: 32px;
+
+.ScheduleVisitPopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  z-index: 100;
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+
+    @include blurred-background;
+  }
+
+  &__popup {
+    position: relative;
+    background-color: $white;
+    border-radius: $border-radius-big;
+    z-index: 101;
+    box-sizing: border-box;
+    box-shadow: 0 0 12px rgba($black, 0.1);
+    width: $popup-width;
+    height: $popup-height;
+    transition: height 0.5s;
+
+    &__content {
+      padding: 0 $content-padding;
+    }
+
+    &--success {
+      height: $popup-height--success;
+    }
+
+    &--error {
+      height: $popup-height--error;
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px;
+
+      > h2 {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        margin: 0;
+      }
+
+      > svg {
+        cursor: pointer;
+      }
+    }
+
+    &__datepicker {
+      display: flex;
+      justify-content: center;
+
+      > .flatpickr-input {
+        display: none;
+      }
+    }
+
+    &__form {
+      $input-spacing: 24px;
+
+      margin: 24px 0 32px 0;
+
+      > span {
+        display: block;
+        font-size: $font-size-s;
+        font-weight: $font-weight-regular;
+        line-height: 18px;
+        margin-top: 16px;
+      }
+
+      &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: $input-spacing;
+      }
+
+      > .Input,
+      &__row {
+        &:not(:last-of-type) {
+          margin-bottom: $input-spacing;
+        }
+      }
+    }
+
+    &-buttons {
+      position: absolute;
+      bottom: $content-padding;
+      right: $content-padding;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+
+      > .Button:last-of-type {
+        margin-left: 24px;
+      }
+    }
+  }
+}

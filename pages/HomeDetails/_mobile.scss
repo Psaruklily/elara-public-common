@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+$carousel-offset: 4px;
+$carousel-height: 300px;
+$content-padding: 24px;
+$content-bottom-offset: 140px;
+
+.mobile {
+  .HomeDetailsPage {
+    grid-template-rows: $carousel-height auto auto;
+    grid-row-gap: 44px;
+    position: relative;
+    padding-top: $carousel-offset;
+
+    .Carousel {
+      height: $carousel-height;
+      min-height: $carousel-height;
+    }
+
+    &__content {
+      @include page-content(100vw, 100vw, 0 $content-padding $content-bottom-offset $content-padding);
+    }
+
+    &__description {
+      grid-template-columns: 1fr;
+    }
+
+    .HomeInfo,
+    .HomeLocation,
+    .HomeComesWith,
+    .SchoolsNearby,
+    &__contacts {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .SchoolsNearby {
+      &__schools {
+        grid-template-columns: 100%;
+      }
+
+      &__school {
+        &__type,
+        &__name {
+          justify-content: center;
+          text-align: center;
+        }
+
+        &__type {
+          svg {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__schedule-visit {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px $content-padding;
+      box-shadow: 0px -2px 8px rgba(139, 172, 168, 0.25);
+      background-color: $white;
+      border-radius: 0;
+      margin: 0 (-$content-padding);
+      border: none;
+      z-index: 10;
+
+      > .Button {
+        margin: 0;
+      }
+    }
+
+    &__contacts__schedule-visit {
+      margin-top: 4px;
+      display: block;
+    }
+  }
+}

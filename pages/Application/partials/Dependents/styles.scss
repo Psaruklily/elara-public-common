@@ -1,0 +1,13 @@
+@import '../../../../styles/variables';
+
+.Dependents {
+  &__add-button {
+    margin-top: 20px;
+
+    > p {
+      font-size: $font-size-xs;
+      color: $gray;
+      margin: 0 0 12px 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+$button-size: 36px;
+
+.CarouselArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $button-size;
+  width: $button-size;
+  cursor: pointer;
+
+  &--direction-right {
+    transform: rotateY(180deg);
+  }
+}

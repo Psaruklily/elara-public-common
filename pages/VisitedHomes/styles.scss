@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+.VisitedHomesPage {
+  @include page-container($page__top-offset);
+
+  &__content {
+    @include page-content(740px, 740px);
+
+    > h1 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 0 20px 0;
+    }
+
+    > p {
+      font-size: $font-size-s;
+      font-weight: $font-weight-medium;
+      margin: 0 0 12px 0;
+      color: $gray;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+
+    .Property {
+      border: $border-width-base solid $gray-silver;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      &__start-application {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+
+        > div:first-of-type {
+          display: flex;
+          flex-direction: column;
+
+          > span {
+            font-size: $font-size-s;
+
+            &:last-of-type {
+              font-weight: $font-weight-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

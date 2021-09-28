@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+.HomeMetrics {
+  display: flex;
+  align-items: center;
+  margin: 0 0 40px 0;
+
+  svg {
+    margin-right: 3px;
+
+    &:not(:first-of-type) {
+      margin-left: 24px;
+    }
+  }
+
+  span {
+    color: $black;
+    font-size: $font-size-m;
+    font-weight: $font-weight-bold;
+  }
+}

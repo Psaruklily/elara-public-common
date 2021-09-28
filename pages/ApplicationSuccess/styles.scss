@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+.ApplicationSuccessPage {
+  @include page-container(0, true, true);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include page-content($page__content__width--small, $page__content__max-width--small);
+    height: fit-content;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    margin: 15px 0 25px 0;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: $font-size-s;
+    margin-bottom: 25px;
+  }
+
+  &__check-list {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba($ziggurat, .15);
+    margin-bottom: 65px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__finish-later {
+      font-size: $font-size-m;
+      font-weight: $font-weight-bold;
+      color: $teal;
+    }
+  }
+}

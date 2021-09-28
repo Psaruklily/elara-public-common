@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+.Tooltip {
+  display: inline-block;
+  vertical-align: middle;
+
+  > svg {
+    cursor: pointer;
+  }
+
+  &__popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 100;
+
+    &__backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100vw;
+
+      @include blurred-background(true);
+    }
+
+    &__body {
+      position: relative;
+      padding: 60px 20px 40px 20px;
+      background-color: $white;
+      border-radius: $border-radius-base;
+      z-index: 101;
+      box-sizing: border-box;
+      box-shadow: 0 0 19px rgba($black, 0.05);
+      width: 600px;
+      height: fit-content;
+      color: $black;
+
+      > h1 {
+        font-size: $font-size-l;
+        font-weight: $font-weight-bold;
+        margin: 0 0 40px 0;
+        text-align: center;
+      }
+
+      &__text {
+        font-size: $font-size-s;
+        margin-bottom: 20px;
+      }
+
+      > a {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-s;
+        text-align: center;
+      }
+
+      > .Button {
+        margin-top: 100px;
+        width: 100%;
+      }
+    }
+  }
+}

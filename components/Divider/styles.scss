@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.Divider {
+  height: $border-width-base;
+  width: 100%;
+  background-color: $gray-gallery;
+}

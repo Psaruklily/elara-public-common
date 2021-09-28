@@ -1,0 +1,9 @@
+$filter-button-margin: 0 0 0 12px;
+
+.FilterButtons {
+  display: flex;
+
+  .FilterButton:not(:first-child) {
+    margin: $filter-button-margin;
+  }
+}

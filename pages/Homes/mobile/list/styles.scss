@@ -1,0 +1,65 @@
+@import '../../../../styles/variables';
+
+.HomesPageListView {
+  height: 100%;
+  padding: 24px 24px 0 24px;
+
+  &__filters-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    .FilterButton__button svg {
+      display: none;
+    }
+
+    &__button-map {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      width: 80px;
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: $border-radius-base;
+      background-color: $catskill-white;
+      color: $dark-turquoise;
+      font-size: $font-size-s;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__sort-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    > p {
+      font-weight: $font-weight-medium;
+      color: rgba($black, 0.6);
+    }
+  }
+
+  &__properties {
+    height: calc(100% - 158px);
+    overflow: auto;
+    margin-right: -15px;
+    padding: 0 15px 24px 0;
+
+    > .Property {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      height: 265px;
+      margin-top: 24px;
+    }
+  }
+
+  &__property-area {
+    font-size: $font-size-s;
+    font-weight: $font-weight-medium;
+    margin-top: 4px;
+  }
+}

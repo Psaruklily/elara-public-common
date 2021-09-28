@@ -1,0 +1,47 @@
+@import '../../../../styles/variables';
+
+$padding: 10px;
+$button-height: 32px;
+$button-min-width: 64px;
+$button-padding: 0 10px;
+$button-padding--active: 0 9px;
+$icon-padding: 0 10px 0 0;
+$menu-top-offset: 5px;
+$menu-padding: 0;
+$menu-width: 200px;
+$menu-buttons-row-padding: 16px;
+
+.FilterButton {
+  $context: &;
+
+  position: relative;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $button-height;
+    width: fit-content;
+    min-width: $button-min-width;
+    border: $border-width-base solid $gray-silver;
+    box-sizing: border-box;
+    border-radius: $border-radius-base;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-s;
+    padding: $button-padding;
+    cursor: pointer;
+    user-select: none;
+
+    > svg {
+      padding: $icon-padding;
+    }
+  }
+
+  &--active {
+    #{$context}__button {
+      background-color: rgba($teal, 0.05);
+      border: $border-width-bold solid $teal;
+      padding: $button-padding--active;
+    }
+  }
+}

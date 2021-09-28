@@ -1,0 +1,50 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+$filters-row-padding: 20px 32px;
+$content-padding: 0 0 0 32px;
+$content-grid-columns: fit-content(700px) 1fr;
+$content-grid-column-gap: 20px;
+$homes-grid-columns: 1fr 1fr;
+
+.HomesPageDesktop {
+  @include page-container(0);
+  flex-direction: column;
+
+  &__content {
+    display: grid;
+    grid-template-columns: $content-grid-columns;
+    grid-template-rows: 100%;
+    column-gap: $content-grid-column-gap;
+    height: calc(100% - 72px);
+    padding: $content-padding;
+  }
+
+  &__filters-row {
+    display: flex;
+    justify-content: space-between;
+    padding: $filters-row-padding;
+  }
+
+  &__homes {
+    height: 100%;
+
+    > p {
+      margin: 12px 0;
+      font-weight: $font-weight-medium;
+      color: rgba($black, 0.6);
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: $homes-grid-columns;
+      margin-left: -10px;
+      max-height: calc(100% - 44px);
+      overflow: auto;
+    }
+  }
+
+  .GoogleMap {
+    border-radius: $border-radius-big;
+  }
+}

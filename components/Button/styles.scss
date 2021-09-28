@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+@import './application-theme';
+
+$button-height: 48px;
+$button-small-height: 34px;
+$button-padding: 0 25px;
+
+.Button {
+  $context: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $button-height;
+  width: fit-content;
+  box-sizing: border-box;
+  border-radius: $border-radius-base;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-m;
+  color: $white;
+  background-color: $teal;
+  padding: $button-padding;
+  cursor: pointer;
+  user-select: none;
+
+  &--secondary {
+    border: $border-width-base solid $gray-silver;
+    color: $black;
+    background-color: transparent;
+  }
+
+  &--text {
+    border: none;
+    color: $gray-dusty;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &--small {
+    font-size: $font-size-s;
+    height: $button-small-height;
+  }
+
+  &--disabled {
+    opacity: 0.6;
+  }
+
+  &--loading {
+    span {
+      visibility: hidden;
+    }
+  }
+
+  .Spinner {
+    position: absolute;
+  }
+}

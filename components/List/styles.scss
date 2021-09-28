@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.List {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 7px;
+    align-items: center;
+    color: $gray;
+    font-size: $font-size-s;
+    font-weight: $font-weight-medium;
+  }
+}

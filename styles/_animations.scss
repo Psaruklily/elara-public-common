@@ -1,0 +1,87 @@
+@import './variables';
+
+// Dropdown menu
+.dropdown {
+  $animation-duration: 100ms;
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity $animation-duration ease-in;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transition: opacity $animation-duration ease-out;
+  }
+}
+
+// Side menu
+.side-menu {
+  &-enter-active {
+    .SideMenu {
+      &__backdrop {
+        @keyframes blur-in {
+          0% { background-color: rgba($black, 0); }
+          100% { background-color: rgba($black, .25); }
+        }
+
+        @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+          background-color: transparent;
+
+          @keyframes blur-in {
+            0% { backdrop-filter: blur(0); }
+            100% { backdrop-filter: blur(1px); }
+          }
+        }
+
+        animation: blur-in 0.4s forwards;
+      }
+
+      &__menu {
+        @keyframes slide-in {
+          0% { right: -$side-menu-width; }
+          100% { right: 0; }
+        }
+
+        animation: slide-in 0.4s forwards;
+      }
+    }
+  }
+
+  &-exit-active {
+    .SideMenu {
+      &__backdrop {
+        @keyframes blur-out {
+          0% { background-color: rgba($black, .25); }
+          100% { background-color: rgba($black, 0); }
+        }
+
+        @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+          @keyframes blur-out {
+            0% { backdrop-filter: blur(1px); }
+            100% { backdrop-filter: blur(0); }
+          }
+        }
+
+        animation: blur-out 0.4s forwards;
+      }
+
+      &__menu {
+        @keyframes slide-out {
+          0% { right: 0; }
+          100% { right: -$side-menu-width; }
+        }
+
+        animation: slide-out 0.4s forwards;
+      }
+    }
+  }
+}

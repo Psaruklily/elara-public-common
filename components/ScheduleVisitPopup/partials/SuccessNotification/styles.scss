@@ -1,0 +1,41 @@
+@import '../../../../styles/variables';
+
+.SuccessNotification {
+  p {
+    margin: 0;
+  }
+
+  &__visit-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    border: $border-width-base solid rgba($black, 0.1);
+    margin: 20px 0;
+    padding: 8px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 164px;
+      border-radius: $border-radius-small;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    &__row {
+      > p:first-child {
+        font-size: $font-size-s;
+        color: rgba($black, 0.6);
+        margin-bottom: 5px;
+      }
+
+      > p:last-child {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}

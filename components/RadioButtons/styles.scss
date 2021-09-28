@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+$row-height: 20px;
+
+.RadioButtons {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  width: 100%;
+
+  &__option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 15px;
+    width: 100%;
+    font-size: $font-size-s;
+    line-height: $row-height;
+    user-select: none;
+    cursor: pointer;
+
+    > svg {
+      height: $row-height;
+      width: $row-height;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.mobile {
+  .Tooltip {
+    &__popup {
+      &__body {
+        box-sizing: border-box;
+        width: calc(100vw - 2 * 20px);
+      }
+    }
+  }
+}

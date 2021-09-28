@@ -1,0 +1,133 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+$carousel-offset: 8px;
+$carousel-height: 400px;
+
+.HomeDetailsPage {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: $carousel-height auto auto;
+  grid-row-gap: 68px;
+  justify-items: center;
+  overflow: auto;
+  padding-top: $carousel-offset;
+
+  .Carousel {
+    box-sizing: border-box;
+    width: 100%;
+    height: $carousel-height;
+    min-height: $carousel-height;
+  }
+
+  &__content {
+    @include page-content($content-padding: 0 0 40px 0);
+  }
+
+  &__description {
+    $c: &;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    column-gap: 16px;
+
+    > div:not(#{$c}__schedule-visit) {
+      > h1 {
+        color: $black;
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-bold;
+        margin: 0 0 12px 0;
+      }
+
+      > p {
+        color: rgba($black, 0.6);
+        font-size: $font-size-m;
+        font-weight: $font-weight-medium;
+        margin: 0 0 12px 0;
+      }
+    }
+  }
+
+  .HomeInfo,
+  .HomeLocation,
+  .HomeComesWith,
+  .SchoolsNearby,
+  &__contacts {
+    $width: calc(100% - 300px - 16px);
+
+    width: $width;
+    max-width: $width;
+  }
+
+  &__schedule-visit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: $border-width-base solid rgba($black, 0.1);
+    border-radius: $border-radius-base;
+    padding: 16px;
+    min-width: 300px;
+    height: fit-content;
+
+    &__amount {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 48px;
+      color: $black;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+
+      span {
+        color: $gray-dusty;
+        font-size: $font-size-s;
+        font-weight: $font-weight-medium;
+      }
+    }
+
+    .Button {
+      margin-left: 50px;
+    }
+  }
+
+  &__contacts {
+    color: $black;
+    font-size: $font-size-m;
+    font-weight: $font-weight-medium;
+
+    &__schedule-visit {
+      color: $teal;
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    p {
+      &:first-of-type {
+        margin: 0;
+      }
+
+      margin: 10px 0 0 0;
+    }
+
+    h3 {
+      margin: 40px 0 10px 0;
+      color: $gray;
+      font-weight: $font-weight-bold;
+      line-height: 14px;
+    }
+
+    h3 + p,
+    h3 + p + p {
+      color: $gray;
+      font-size: $font-size-s;
+      font-weight: $font-weight-regular;
+      line-height: 14px;
+    }
+
+    h3 + p + p {
+      margin: 20px 0 0 0;
+    }
+  }
+}

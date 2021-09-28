@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import './mobile';
+
+.ApplicationPage {
+  @include page-container($top-offset: $page__top-offset, $full-screen-height: true);
+
+  &__content {
+    @include page-content;
+
+    > h1 {
+      @include font($font-size-xl, $font-weight-bold);
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 100%;
+    grid-column-gap: 85px;
+    box-sizing: border-box;
+    height: calc(100% - 40px - 45px);
+  }
+
+  &__form {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 0 15px 40px 0;
+
+    > h2 {
+      @include font($weight: $font-weight-bold);
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    > .Property {
+      border: $border-width-base solid $gray-silver;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input-column-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-row-gap: 20px;
+  }
+
+  &__input-row-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+  }
+}

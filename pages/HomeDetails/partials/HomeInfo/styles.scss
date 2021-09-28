@@ -1,0 +1,33 @@
+@import '../../../../styles/variables';
+
+.HomeInfo {
+  width: 100%;
+
+  h2 {
+    color: $black;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin: 0 0 30px 0;
+  }
+
+  &__table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+
+    &__cell {
+      font-size: $font-size-m;
+      font-weight: $font-weight-medium;
+
+      &__label {
+        color: rgba($black, 0.6);
+      }
+
+      &__value {
+        color: rgba($black, 0.87);
+        line-height: 20px;
+      }
+    }
+  }
+}

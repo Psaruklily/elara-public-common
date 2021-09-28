@@ -1,0 +1,44 @@
+@import '../../../../../../styles/variables';
+
+$button-height: 32px;
+$menu-top-offset: 5px;
+$menu-padding: 0;
+$menu-width: 200px;
+$menu-buttons-row-padding: 16px;
+
+.FilterDropdownMenu {
+  position: absolute;
+  width: $menu-width;
+  top: $button-height + $menu-top-offset;
+  left: 0;
+  padding: $menu-padding;
+  box-shadow: 0 0 12px rgba($black, 0.1);
+  background-color: $white;
+  box-sizing: border-box;
+  z-index: 99;
+
+  &__filters {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-gap: 18px;
+    padding: 20px 16px;
+    border-bottom: $border-width-base solid $gray-gallery;
+
+    &__label {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-s;
+      font-weight: $font-weight-regular;
+      color: $gray;
+    }
+  }
+
+  &__buttons-row {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $menu-buttons-row-padding;
+  }
+}

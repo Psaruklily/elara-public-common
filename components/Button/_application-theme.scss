@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.Button--application-theme.Button {
+  background-color: $dark-turquoise;
+  border-radius: $border-radius-extra-small;
+
+  &--secondary {
+    border: $border-width-base solid $dark-turquoise;
+    background-color: transparent;
+    color: $teal;
+  }
+
+  &--text {
+    color: $teal;
+    background-color: transparent;
+  }
+}

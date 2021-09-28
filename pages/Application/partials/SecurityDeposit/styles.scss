@@ -1,0 +1,20 @@
+@import '../../../../styles/variables';
+
+.SecurityDeposit {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+  width: 100%;
+
+  > h2 {
+    font-size: $font-size-m;
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+
+  &__script {
+    font-size: $font-size-xs;
+    color: $gray;
+    margin: 0 0 12px 0;
+  }
+}

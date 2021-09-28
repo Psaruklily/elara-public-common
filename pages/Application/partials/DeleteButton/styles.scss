@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.DeleteButton {
+  color: $red;
+  font-size: $font-size-s;
+  font-weight: $font-weight-bold;
+  background-color: $red-light;
+  border-radius: $border-radius-small;
+  width: fit-content;
+  padding: 5px 12px 5px 12px;
+  cursor: pointer;
+}

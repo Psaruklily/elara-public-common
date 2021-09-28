@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+
+$select-height: 36px;
+$select-height--size-big: 40px;
+$select-font-size: $font-size-s;
+$select-font-size--size-big: $font-size-m;
+$select-padding: 0 12px;
+$menu-top-offset: 10px;
+$menu-min-width: 100%;
+$menu-padding: 4px 0;
+$menu-item-height: 38px;
+$menu-item-padding: 0 14px;
+$label-line-height: 20px;
+$label-margin-bottom: 12px;
+
+.Select {
+  $context: &;
+
+  position: relative;
+
+  &--with-label {
+    #{$context}__options-menu {
+      top: $select-height + $menu-top-offset + $label-line-height + $label-margin-bottom;
+    }
+  }
+
+  &--size-big {
+    &#{$context}--with-label {
+      #{$context}__options-menu {
+        top: $select-height--size-big + $menu-top-offset + $label-line-height + $label-margin-bottom;
+      }
+    }
+
+    #{$context} {
+      &__selected-option {
+        height: $select-height--size-big;
+
+        span {
+          font-size: $select-font-size--size-big;
+        }
+      }
+
+      &__options-menu {
+        top: $select-height--size-big + $menu-top-offset;
+
+        &__item {
+          font-size: $select-font-size--size-big;
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    font-weight: $font-weight-medium;
+    line-height: $label-line-height;
+    margin-bottom: $label-margin-bottom;
+  }
+
+  &__selected-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    height: $select-height;
+    border: $border-width-base solid $gray-silver;
+    box-sizing: border-box;
+    border-radius: $border-radius-extra-small;
+    cursor: pointer;
+    user-select: none;
+
+    &__placeholder {
+      color: $gray-dusty;
+    }
+
+    span {
+      font-size: $select-font-size;
+      font-weight: $font-weight-medium;
+    }
+
+    svg {
+      padding: 0 0 0 12px;
+    }
+  }
+
+  &__options-menu {
+    position: absolute;
+    width: fit-content;
+    min-width: $menu-min-width;
+    height: fit-content;
+    max-height: 274px;
+    overflow: auto;
+    box-sizing: border-box;
+    top: $select-height + $menu-top-offset;
+    left: 0;
+    padding: $menu-padding;
+    box-shadow: 0 0 12px rgba($black, 0.1);
+    background-color: $white;
+    z-index: 99;
+
+    &--position-top {
+      bottom: $select-height + $menu-top-offset;
+      top: unset;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      height: $menu-item-height;
+      padding: $menu-item-padding;
+      font-size: $select-font-size;
+      cursor: pointer;
+      user-select: none;
+
+      &--selected {
+        background-color: $gray-gallery;
+        font-weight: $font-weight-bold;
+      }
+
+      &--disabled {
+        opacity: 0.6;
+      }
+    }
+  }
+}

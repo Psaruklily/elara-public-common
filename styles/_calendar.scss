@@ -1,0 +1,19 @@
+@import './variables';
+
+.flatpickr-calendar {
+  &.arrowTop:before {
+    display: none;
+  }
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month{
+    > svg {
+      fill: $gray;
+    }
+  }
+
+  .flatpickr-day.selected {
+    background-color: $teal;
+    border-color: $teal;
+  }
+}

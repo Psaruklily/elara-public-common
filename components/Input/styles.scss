@@ -1,0 +1,79 @@
+@import '../../styles/variables';
+
+$input-height: 40px;
+$input-icon-size: 20px;
+$input-icon-padding: 10px;
+$input-padding--default: 8px 16px;
+$input-padding--with-icon: 8px ($input-icon-size + 2 * $input-icon-padding) 8px 16px;
+$label-margin-bottom: 12px;
+
+.Input {
+  &--date-picker {
+    cursor: pointer;
+  }
+
+  label {
+    display: block;
+    margin-bottom: $label-margin-bottom;
+    font-weight: $font-weight-medium;
+  }
+
+  &__input-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__input {
+      border: $border-width-base solid $gray-silver;
+      box-sizing: border-box;
+      border-radius: $border-radius-base;
+      height: $input-height;
+      width: 100%;
+      font-family: 'Mulish', sans-serif;
+      font-size: $font-size-m;
+      outline: none;
+      padding: $input-padding--default;
+      background-color: transparent;
+      z-index: 2;
+
+      &::placeholder {
+        color: $gray-dusty;
+      }
+
+      &--disabled {
+        background-color: $gray-gallery;
+      }
+
+      &--with-icon {
+        padding: $input-padding--with-icon;
+      }
+
+      &--text-area {
+        height: 100px;
+        resize: none;
+      }
+
+      &--error {
+        border-color: $red;
+        box-shadow: 0 0 3px $red;
+      }
+    }
+
+    svg {
+      width: $input-icon-size;
+      height: $input-icon-size;
+      padding: $input-icon-padding;
+      position: absolute;
+      color: $dark-turquoise;
+      z-index: 1;
+    }
+  }
+
+  &__error-message {
+    margin-top: 4px;
+    color: $red;
+    font-size: $font-size-s;
+  }
+}

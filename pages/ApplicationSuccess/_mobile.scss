@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.mobile {
+  .ApplicationSuccessPage {
+    &__content {
+      @include page-content(100vw, 100vw, 24px);
+      height: fit-content;
+    }
+
+    &__check-list {
+      margin-bottom: 24px;
+    }
+
+    &__buttons {
+      width: 100%;
+
+      > .Button {
+        width: 100%;
+      }
+    }
+  }
+}

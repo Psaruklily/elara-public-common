@@ -1,0 +1,55 @@
+@import '../../../../styles/variables';
+
+$trigger-button-height: 30px;
+$sort-icon-margin: 0 15px 0 0;
+$menu-top-offset: 10px;
+$menu-padding: 4px 0;
+$menu-width: 180px;
+$menu-item-height: 42px;
+$menu-item-padding: 0 20px;
+
+.SortMenu {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  &__trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-s;
+    cursor: pointer;
+    user-select: none;
+    height: $trigger-button-height;
+
+    > svg {
+      margin: $sort-icon-margin;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: $menu-width;
+    top: $trigger-button-height + $menu-top-offset;
+    padding: $menu-padding;
+    border-radius: $border-radius-base;
+    box-shadow: 0 0 10px rgba($black, 0.1);
+    background-color: $white;
+    z-index: 99;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      height: $menu-item-height;
+      padding: $menu-item-padding;
+      cursor: pointer;
+      user-select: none;
+
+      &--active {
+        background-color: $gray-gallery;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}

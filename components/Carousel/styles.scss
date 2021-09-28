@@ -1,0 +1,25 @@
+@import '~keen-slider/keen-slider.min.css';
+
+.Carousel {
+  position: relative;
+
+  &__slides {
+    height: 100%;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  .CarouselArrow {
+    position: absolute;
+    left: 24px;
+    top: calc(50% - 18px);
+    z-index: 10;
+
+    &--direction-right {
+      left: unset;
+      right: 24px;
+    }
+  }
+}

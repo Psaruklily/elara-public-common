@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+.HomeComesWith {
+  width: 100%;
+
+  h2 {
+    color: $black;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin: 0 0 30px 0;
+  }
+
+  > div:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  .list-item {
+    margin-left: 10px;
+    font-weight: $font-weight-medium;
+  }
+}
